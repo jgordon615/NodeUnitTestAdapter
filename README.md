@@ -13,6 +13,10 @@ Requirements:
  * NodeUnit must be in an appropriate node_modules folder relative to the location of the nodeunit tests file.  
  * NodeUnit test files must have the file extension ".test.js"
 
+Installation:
+ * Download the vsix plugin here: http://visualstudiogallery.msdn.microsoft.com/ff0608f4-be02-43e9-a588-abbc2a883f2b
+ * OR search for "VsNodeTest" using Visual Studio's Extensions and Updates.
+
 Todo:
  * Create a custom project type to house nodeunit unit tests. (Complete with custom templates for nodeunit test files)
 
