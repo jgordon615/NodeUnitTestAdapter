@@ -1,0 +1,12 @@
+Visual Studio 2012 test adapter for NodeUnit.  This adapter integrates Visual Studio 2012's test explorer with nodeunit unit tests.
+
+The following features are supported:
+
+Run all tests
+Run individual tests
+Click test to go to source code
+Click stack trace (in a failed test) to go to source code
+
+MUST HAVE NODE.JS installed, and nodeunit must be in an appropriate node_modules folder relative to the location of the nodeunit tests file.  Additionally, nodeunit test files must have the file extension ".test.js"
+
+If you like this, please leave a comment.

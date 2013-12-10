@@ -1,0 +1,11 @@
+*.com
+*.dll
+*.exe
+*.o
+*.so
+*.zip
+bin/
+obj/
+TestResults/
+node_modules/
+packages/
