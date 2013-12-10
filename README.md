@@ -9,8 +9,11 @@ The following features are supported:
  * Click stack trace (in a failed test) to go to source code
 
 Requirements:
-	MUST HAVE NODE.JS installed
-	NodeUnit must be in an appropriate node_modules folder relative to the location of the nodeunit tests file.  
-	NodeUnit test files must have the file extension ".test.js"
+ * MUST HAVE NODE.JS installed
+ * NodeUnit must be in an appropriate node_modules folder relative to the location of the nodeunit tests file.  
+ * NodeUnit test files must have the file extension ".test.js"
+
+Todo:
+ * Create a custom project type to house nodeunit unit tests. (Complete with custom templates for nodeunit test files)
 
 If you like this, please leave a comment.
