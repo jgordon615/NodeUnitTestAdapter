@@ -11,6 +11,7 @@ The following features are supported:
 
 Requirements:
  * Must have node.js installed
+ * Must have node.js tools for Visual Studio installed: https://nodejstools.codeplex.com
  * NodeUnit must be in an appropriate node_modules folder relative to the location of the nodeunit tests file.  
  * NodeUnit test files must have the file extension ".test.js"
 
