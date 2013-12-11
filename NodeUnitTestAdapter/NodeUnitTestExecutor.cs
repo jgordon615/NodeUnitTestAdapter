@@ -92,24 +92,31 @@ namespace NodeUnitTestAdapter
                     }
                     else
                     {
-                        var result = JsonConvert.DeserializeObject<NodeUnitTestResult>(data);
-
-                        if (result != null && !string.IsNullOrEmpty(result.TestName))
+                        try
                         {
-                            var testCase = new TestCase(result.TestName, NodeUnitTestExecutor.ExecutorUri, fileName) { DisplayName = result.TestName };
-                            var testResult = new TestResult(testCase) { DisplayName = result.TestName };
-                            testResult.Duration = TimeSpan.FromSeconds(result.Duration);
-                            testResult.Outcome = result.Passed ? TestOutcome.Passed : TestOutcome.Failed;
+                            var result = JsonConvert.DeserializeObject<NodeUnitTestResult>(data);
 
-                            if (result.Assertions.Length > 0)
+                            if (result != null && !string.IsNullOrEmpty(result.TestName))
                             {
-                                var first = result.Assertions.First();
-                                testResult.ErrorStackTrace = FormatStackTrace(first.Stack);
-                                testResult.ErrorMessage = first.Message;
-                            }
+                                var testCase = new TestCase(result.TestName, NodeUnitTestExecutor.ExecutorUri, fileName) { DisplayName = result.TestName };
+                                var testResult = new TestResult(testCase) { DisplayName = result.TestName };
+                                testResult.Duration = TimeSpan.FromSeconds(Math.Max(.001, result.Duration));
+                                testResult.Outcome = result.Passed ? TestOutcome.Passed : TestOutcome.Failed;
 
-                            frameworkHandle.SendMessage(TestMessageLevel.Informational, "Recording Result for " + testCase.DisplayName + " (" + testResult.Outcome.ToString() + ")");
-                            frameworkHandle.RecordResult(testResult);
+                                if (result.Assertions.Length > 0)
+                                {
+                                    var first = result.Assertions.First();
+                                    testResult.ErrorStackTrace = FormatStackTrace(first.Stack);
+                                    testResult.ErrorMessage = first.Message;
+                                }
+
+                                frameworkHandle.SendMessage(TestMessageLevel.Informational, "Recording Result for " + testCase.DisplayName + " (" + testResult.Outcome.ToString() + ")");
+                                frameworkHandle.RecordResult(testResult);
+                            }
+                        }
+                        catch (Newtonsoft.Json.JsonException)
+                        {
+                            //frameworkHandle.SendMessage(TestMessageLevel.Informational, data);
                         }
                     }
                 }
