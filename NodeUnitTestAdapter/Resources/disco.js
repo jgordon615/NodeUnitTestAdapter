@@ -18,32 +18,34 @@ function disco(filename) {
                 // exports.testName = function (test) { ... }
                 var funStr = module[n].toString();
                 var position = fileStr.indexOf(funStr);
-                var line = fileStr.substring(0, position).match(/\n/g).length + 1;
-                var params = funStr.slice(funStr.indexOf('(') + 1, funStr.indexOf(')')).match(/([^\s,]+)/g);
-                var isATest = (params && params.length === 1 && params[0] === "test" && funStr.indexOf(".done()") > -1);
+                var match = fileStr.substring(0, position).match(/\n/g);
+                if (match && match.length) {
+                    var line = match.length + 1;
+                    var params = funStr.slice(funStr.indexOf('(') + 1, funStr.indexOf(')')).match(/([^\s,]+)/g);
+                    var isATest = (params && params.length === 1 && params[0] === "test" && funStr.indexOf(".done()") > -1);
 
-                if (isATest) {
-                    var testDescriptor = null;
+                    if (isATest) {
+                        var testDescriptor = null;
 
-                    var hasMeta = !!module[n].meta;
+                        var hasMeta = !!module[n].meta;
 
-                    if (hasMeta) {
-                        testDescriptor = module[n].meta;
-                        testDescriptor.name = n;
-                        testDescriptor.line = line;
-                    } else {
-                        testDescriptor = {
-                            name: null,
-                            line: line,
-                            description: null,
-                            traits: []
-                        };
-                        testDescriptor.name = n;
+                        if (hasMeta) {
+                            testDescriptor = module[n].meta;
+                            testDescriptor.name = n;
+                            testDescriptor.line = line;
+                        } else {
+                            testDescriptor = {
+                                name: null,
+                                line: line,
+                                description: null,
+                                traits: []
+                            };
+                            testDescriptor.name = n;
+                        }
+
+                        console.log(JSON.stringify(testDescriptor));
                     }
-
-                    console.log(JSON.stringify(testDescriptor));
                 }
-
                 break;
         }
     }
