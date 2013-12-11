@@ -4,6 +4,8 @@
 *.o
 *.so
 *.zip
+*.sdf
+*.opensdf
 bin/
 obj/
 TestResults/
