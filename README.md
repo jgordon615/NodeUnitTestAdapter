@@ -1,4 +1,4 @@
-Visual Studio 2012 test adapter for NodeUnit.  This adapter integrates Visual Studio 2012's test explorer with nodeunit unit tests.
+Visual Studio 2012/2013 test adapter for NodeUnit.  This adapter integrates Visual Studio's test explorer with nodeunit unit tests.
 
 This plugin looks at ALL .test.js files in your solution for nodeunit unit tests, and integrates them with the test explorer.
 

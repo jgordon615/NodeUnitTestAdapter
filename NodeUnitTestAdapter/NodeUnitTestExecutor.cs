@@ -47,6 +47,17 @@ namespace NodeUnitTestAdapter
             }
         }
 
+        private static void GenericFailTest(IFrameworkHandle frameworkHandle, string fileName, string testName, string message = null)
+        {
+            var testCase = new TestCase(testName, NodeUnitTestExecutor.ExecutorUri, fileName) { DisplayName = testName };
+            var testResult = new TestResult(testCase) { DisplayName = testName };
+            testResult.Outcome = TestOutcome.Failed;
+            testResult.ErrorMessage = message;
+
+            frameworkHandle.SendMessage(TestMessageLevel.Informational, "Recording Result for " + testCase.DisplayName + " (" + testResult.Outcome.ToString() + ")");
+            frameworkHandle.RecordResult(testResult);
+        }
+
         private static void RunFileOrTest(IFrameworkHandle frameworkHandle, IRunContext runContext, string fileName, string testName = null)
         {
             frameworkHandle.SendMessage(TestMessageLevel.Informational, "runContext.SolutionDirectory: " + runContext.SolutionDirectory);
@@ -72,24 +83,34 @@ namespace NodeUnitTestAdapter
                 {
                     frameworkHandle.SendMessage(TestMessageLevel.Informational, "> " + data);
 
-                    var result = JsonConvert.DeserializeObject<NodeUnitTestResult>(data);
-
-                    if (!string.IsNullOrEmpty(result.TestName))
+                    if (data.Contains("Error: Cannot find module 'nodeunit'"))
                     {
-                        var testCase = new TestCase(result.TestName, NodeUnitTestExecutor.ExecutorUri, fileName) { DisplayName = result.TestName };
-                        var testResult = new TestResult(testCase) { DisplayName = result.TestName };
-                        testResult.Duration = TimeSpan.FromSeconds(result.Duration);
-                        testResult.Outcome = result.Passed ? TestOutcome.Passed : TestOutcome.Failed;
-
-                        if (result.Assertions.Length > 0)
+                        if (!string.IsNullOrEmpty(testName))
                         {
-                            var first = result.Assertions.First();
-                            testResult.ErrorStackTrace = FormatStackTrace(first.Stack);
-                            testResult.ErrorMessage = first.Message;
+                            GenericFailTest(frameworkHandle, fileName, testName, data);
                         }
+                    }
+                    else
+                    {
+                        var result = JsonConvert.DeserializeObject<NodeUnitTestResult>(data);
 
-                        frameworkHandle.SendMessage(TestMessageLevel.Informational, "Recording Result for " + testCase.DisplayName + " (" + testResult.Outcome.ToString() + ")");
-                        frameworkHandle.RecordResult(testResult);
+                        if (result != null && !string.IsNullOrEmpty(result.TestName))
+                        {
+                            var testCase = new TestCase(result.TestName, NodeUnitTestExecutor.ExecutorUri, fileName) { DisplayName = result.TestName };
+                            var testResult = new TestResult(testCase) { DisplayName = result.TestName };
+                            testResult.Duration = TimeSpan.FromSeconds(result.Duration);
+                            testResult.Outcome = result.Passed ? TestOutcome.Passed : TestOutcome.Failed;
+
+                            if (result.Assertions.Length > 0)
+                            {
+                                var first = result.Assertions.First();
+                                testResult.ErrorStackTrace = FormatStackTrace(first.Stack);
+                                testResult.ErrorMessage = first.Message;
+                            }
+
+                            frameworkHandle.SendMessage(TestMessageLevel.Informational, "Recording Result for " + testCase.DisplayName + " (" + testResult.Outcome.ToString() + ")");
+                            frameworkHandle.RecordResult(testResult);
+                        }
                     }
                 }
             };
@@ -102,9 +123,10 @@ namespace NodeUnitTestAdapter
 
                     if (args.Data.Contains("Error: Cannot find module 'nodeunit'"))
                     {
-                        // We don't know what test is running, so I don't know how to do this:
-                        // I'd prefer to fail the test and notify a custom message that you 
-                        // need to run "npm install" before running tests.
+                        if (!string.IsNullOrEmpty(testName))
+                        {
+                            GenericFailTest(frameworkHandle, fileName, testName, args.Data);
+                        }
                     }
                 }
             };
