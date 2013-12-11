@@ -10,7 +10,7 @@ The following features are supported:
  * Custom project type which includes 2 example tests
 
 Requirements:
- * MUST HAVE NODE.JS installed
+ * Must have node.js installed
  * NodeUnit must be in an appropriate node_modules folder relative to the location of the nodeunit tests file.  
  * NodeUnit test files must have the file extension ".test.js"
 

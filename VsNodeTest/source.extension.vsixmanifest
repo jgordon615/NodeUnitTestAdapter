@@ -1,19 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
 	<Metadata>
-		<Identity Id="4c7cf563-2903-4091-8efb-52635dae9de6" Version="1.0" Language="en-US" Publisher="Joseph R. Gordon" />
+		<Identity Id="4c7cf563-2903-4091-8efb-52635dae9de6" Version="1.1" Language="en-US" Publisher="Joseph R. Gordon" />
 		<DisplayName>VsNodeTest</DisplayName>
 		<Description xml:space="preserve">Visual Studio test adapter for NodeUnit</Description>
+		<Icon>nodeunit.png</Icon>
+		<PreviewImage>nodeunit.png</PreviewImage>
 		<Tags>Unit Test Adapater, NodeUnit</Tags>
 	</Metadata>
 	<Installation InstalledByMsi="false" AllUsers="true">
-		<InstallationTarget Id="Microsoft.VisualStudio.Pro" Version="11.0" />
-		<InstallationTarget Version="[11.0,12.0)" Id="Microsoft.VisualStudio.Ultimate" />
-		<InstallationTarget Version="[11.0,12.0)" Id="Microsoft.VisualStudio.Premium" />
+		<InstallationTarget Id="Microsoft.VisualStudio.Pro" Version="[11.0,12.0]" />
+		<InstallationTarget Version="[11.0,12.0]" Id="Microsoft.VisualStudio.Ultimate" />
+		<InstallationTarget Version="[11.0,12.0]" Id="Microsoft.VisualStudio.Premium" />
 	</Installation>
 	<Dependencies>
 		<Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" d:Source="Manual" Version="4.5" />
-		<Dependency d:Source="Installed" Id="4219f2a8-fbf9-4659-a222-b7580a60eebb" DisplayName="Node.js Tools" Version="[1.0,2.0)" d:InstallSource="Download" Location="https://nodejstools.codeplex.com/" />
+		<Dependency d:Source="Installed" Id="4219f2a8-fbf9-4659-a222-b7580a60eebb" DisplayName="Node.js Tools" Version="[1.0,2.0]" d:InstallSource="Download" Location="https://nodejstools.codeplex.com/" />
 	</Dependencies>
 	<Assets>
 		<Asset Type="UnitTestExtension" d:ProjectName="NodeUnitTestAdapter" Path="|NodeUnitTestAdapter|" d:Source="Project" />
