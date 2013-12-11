@@ -99,6 +99,13 @@ namespace NodeUnitTestAdapter
                 if (!string.IsNullOrEmpty(args.Data))
                 {
                     frameworkHandle.SendMessage(TestMessageLevel.Warning, "^ " + args.Data);
+
+                    if (args.Data.Contains("Error: Cannot find module 'nodeunit'"))
+                    {
+                        // We don't know what test is running, so I don't know how to do this:
+                        // I'd prefer to fail the test and notify a custom message that you 
+                        // need to run "npm install" before running tests.
+                    }
                 }
             };
 

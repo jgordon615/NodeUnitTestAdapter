@@ -17,5 +17,6 @@
 	<Assets>
 		<Asset Type="UnitTestExtension" d:ProjectName="NodeUnitTestAdapter" Path="|NodeUnitTestAdapter|" d:Source="Project" />
 		<Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="NodeUnitTestAdapter" Path="|NodeUnitTestAdapter|" />
+		<Asset d:VsixSubPath="ProjectTemplates\NodeUnitTest" Type="Microsoft.VisualStudio.ProjectTemplate" d:Source="File" Path="ProjectTemplates" ProjectType="Javascript" Language="Javascript" TemplateId="Microsoft.JavaScript.NodeUnitTestApp" Title="NodeUnit Test Application" Description="NodeUnit Template" Version="4.0" d:TargetPath="ProjectTemplates\NodeUnitTest\NodeUnitTest.vstemplate" />
 	</Assets>
 </PackageManifest>

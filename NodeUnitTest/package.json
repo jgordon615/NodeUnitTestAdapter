@@ -1,0 +1,11 @@
+{
+  "name": "NodeUnitTestProject",
+  "author": "",
+  "version": "0.0.0",
+  "author": "Your name <youremail@email.com>",
+  "description": "A nodeunit test project",
+  "contributors": [],
+  "dependencies": {
+	"nodeunit": "*"
+  }
+}

@@ -1,0 +1,13 @@
+{
+	"name": "$safeprojectname$",
+	"version": "0.0.0",
+	"description": "A nodeunit test project",
+	"author": {
+		"name": "$username$",
+		"email": ""
+	},
+	"contributors": [],
+	"dependencies": {
+		"nodeunit": "*"
+	}
+}

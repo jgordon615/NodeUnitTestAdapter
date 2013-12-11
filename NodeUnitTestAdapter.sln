@@ -1,13 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject", "TestProject\TestProject.csproj", "{8FCEDBB7-C25A-4F25-8339-BB07CF45F737}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NodeUnitTestAdapter", "NodeUnitTestAdapter\NodeUnitTestAdapter.csproj", "{A6F36102-6798-4018-8A2C-D5DC6D1ED08D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VsNodeTest", "VsNodeTest\VsNodeTest.csproj", "{3FB0D4C4-4877-4EB4-8F90-BB2880D44292}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Research", "Research\Research.csproj", "{DF966780-B0EC-4947-BC23-7B7DDE6E1C3C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3B601F13-2AAB-4F35-95C0-2C6A78495DB5}"
 	ProjectSection(SolutionItems) = preProject
@@ -18,7 +14,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 4
+		SccNumberOfProjects = 2
 		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
 		SccTeamFoundationServer = http://teamsystem.walgreens.com:8080/tfs/walgreensphwcollection
 		SccProjectUniqueName0 = NodeUnitTestAdapter\\NodeUnitTestAdapter.csproj
@@ -26,43 +22,41 @@ Global
 		SccAuxPath0 = http://teamsystem.walgreens.com:8080/tfs/walgreensphwcollection
 		SccLocalPath0 = NodeUnitTestAdapter
 		SccProvider0 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccProjectUniqueName1 = TestProject\\TestProject.csproj
-		SccProjectName1 = TestProject
+		SccProjectUniqueName1 = VsNodeTest\\VsNodeTest.csproj
+		SccProjectName1 = VsNodeTest
 		SccAuxPath1 = http://teamsystem.walgreens.com:8080/tfs/walgreensphwcollection
-		SccLocalPath1 = TestProject
+		SccLocalPath1 = VsNodeTest
 		SccProvider1 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccProjectUniqueName2 = VsNodeTest\\VsNodeTest.csproj
-		SccProjectName2 = VsNodeTest
-		SccAuxPath2 = http://teamsystem.walgreens.com:8080/tfs/walgreensphwcollection
-		SccLocalPath2 = VsNodeTest
-		SccProvider2 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccProjectUniqueName3 = Research\\Research.csproj
-		SccProjectName3 = Research
-		SccAuxPath3 = http://teamsystem.walgreens.com:8080/tfs/walgreensphwcollection
-		SccLocalPath3 = Research
-		SccProvider3 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|Win32 = Debug|Win32
 		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|Win32 = Release|Win32
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{8FCEDBB7-C25A-4F25-8339-BB07CF45F737}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8FCEDBB7-C25A-4F25-8339-BB07CF45F737}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8FCEDBB7-C25A-4F25-8339-BB07CF45F737}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8FCEDBB7-C25A-4F25-8339-BB07CF45F737}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A6F36102-6798-4018-8A2C-D5DC6D1ED08D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A6F36102-6798-4018-8A2C-D5DC6D1ED08D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6F36102-6798-4018-8A2C-D5DC6D1ED08D}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{A6F36102-6798-4018-8A2C-D5DC6D1ED08D}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{A6F36102-6798-4018-8A2C-D5DC6D1ED08D}.Debug|Win32.ActiveCfg = Debug|Any CPU
 		{A6F36102-6798-4018-8A2C-D5DC6D1ED08D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A6F36102-6798-4018-8A2C-D5DC6D1ED08D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6F36102-6798-4018-8A2C-D5DC6D1ED08D}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{A6F36102-6798-4018-8A2C-D5DC6D1ED08D}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{A6F36102-6798-4018-8A2C-D5DC6D1ED08D}.Release|Win32.ActiveCfg = Release|Any CPU
 		{3FB0D4C4-4877-4EB4-8F90-BB2880D44292}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3FB0D4C4-4877-4EB4-8F90-BB2880D44292}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FB0D4C4-4877-4EB4-8F90-BB2880D44292}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{3FB0D4C4-4877-4EB4-8F90-BB2880D44292}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{3FB0D4C4-4877-4EB4-8F90-BB2880D44292}.Debug|Win32.ActiveCfg = Debug|Any CPU
 		{3FB0D4C4-4877-4EB4-8F90-BB2880D44292}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3FB0D4C4-4877-4EB4-8F90-BB2880D44292}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DF966780-B0EC-4947-BC23-7B7DDE6E1C3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DF966780-B0EC-4947-BC23-7B7DDE6E1C3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DF966780-B0EC-4947-BC23-7B7DDE6E1C3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DF966780-B0EC-4947-BC23-7B7DDE6E1C3C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FB0D4C4-4877-4EB4-8F90-BB2880D44292}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{3FB0D4C4-4877-4EB4-8F90-BB2880D44292}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{3FB0D4C4-4877-4EB4-8F90-BB2880D44292}.Release|Win32.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
