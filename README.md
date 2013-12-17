@@ -10,6 +10,7 @@ The following features are supported:
  * Custom project type which includes 2 example tests
 
 Requirements:
+ * Visual Studio 2012 (Update 1) / 2013
  * Must have node.js installed
  * Must have node.js tools for Visual Studio installed: https://nodejstools.codeplex.com
  * NodeUnit must be in an appropriate node_modules folder relative to the location of the nodeunit tests file.  
